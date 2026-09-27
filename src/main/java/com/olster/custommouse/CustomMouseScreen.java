@@ -97,10 +97,6 @@ public class CustomMouseScreen extends Screen {
         }
     }
 
-    private void updateMouseSettings() {
-        CustomMouseClient.applyMouseSettings(this.minecraft);
-    }
-
     private Component sensitivityText() {
         return Component.literal(String.format("Mouse Sensitivity: %d%%", (int) (CustomMouseClient.SETTINGS.sensitivity * 100)));
     }
@@ -154,7 +150,9 @@ public class CustomMouseScreen extends Screen {
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
-        this.renderBackground(graphics, mouseX, mouseY, delta);
+        // Do not call renderBackground(): Minecraft 1.21.11 can attempt to blur
+        // the screen more than once per frame, which crashes this custom screen.
+        graphics.fill(0, 0, this.width, this.height, 0xCC101010);
         graphics.drawCenteredString(this.font, this.title, this.width / 2, this.height / 2 - 145, 0xFFFFFF);
         super.render(graphics, mouseX, mouseY, delta);
     }
