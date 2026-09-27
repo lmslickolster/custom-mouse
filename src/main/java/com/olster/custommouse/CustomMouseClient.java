@@ -5,8 +5,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
 import org.lwjgl.glfw.GLFW;
 
 public class CustomMouseClient implements ClientModInitializer {
@@ -21,12 +19,15 @@ public class CustomMouseClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        // Keybind is registered above. Poll it every client tick.
         net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (OPEN_MENU.consumeClick()) {
                 if (client.screen == null) {
-                    client.setScreen(new CustomMouseScreen(Component.literal("Custom Mouse")));
+                    client.setScreen(new CustomMouseScreen(net.minecraft.network.chat.Component.literal("Custom Mouse")));
                 }
+            }
+
+            if (client.getWindow() != null) {
+                CustomCursorManager.tick(client.getWindow());
             }
         });
     }
