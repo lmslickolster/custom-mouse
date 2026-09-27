@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "custom-mouse",
+  "version": "${version}",
+  "name": "Custom Mouse",
+  "description": "Simple in-game mouse and crosshair customization.",
+  "authors": ["Olster Studios"],
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.olster.custommouse.CustomMouseClient"
+    ]
+  },
+  "mixins": [
+    "custom-mouse.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.1",
+    "minecraft": "~1.21.11",
+    "fabric-api": "*"
+  }
+}
