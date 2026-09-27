@@ -12,7 +12,7 @@ public class CustomMouseClient implements ClientModInitializer {
             "key.custommouse.open_menu",
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_P,
-            "category.custommouse"
+            KeyMapping.Category.MISC
     ));
 
     public static final Settings SETTINGS = new Settings();
@@ -34,7 +34,7 @@ public class CustomMouseClient implements ClientModInitializer {
 
     public static void applyMouseSettings(Minecraft client) {
         if (client.options != null) {
-            client.options.mouseSensitivity().set(SETTINGS.sensitivity);
+            client.options.sensitivity().set(SETTINGS.sensitivity);
             client.options.invertYMouse().set(SETTINGS.invertY);
         }
     }
