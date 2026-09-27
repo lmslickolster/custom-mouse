@@ -1,5 +1,13 @@
 # Custom Mouse
 
+<p align="center">
+  <img src="assets/custom-mouse-logo.svg" alt="Custom Mouse logo" width="180">
+</p>
+
+<p align="center">
+  A simple Minecraft Fabric mod for customizing your mouse and crosshair.
+</p>
+
 **Custom Mouse** is a simple Minecraft mod that lets you change your mouse and crosshair settings from inside the game.
 
 You do **not** need to know how Minecraft modding works to use this mod. Just follow the steps below.
