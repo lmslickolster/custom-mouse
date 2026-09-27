@@ -35,7 +35,8 @@ public class CustomMouseClient implements ClientModInitializer {
     public static void applyMouseSettings(Minecraft client) {
         if (client.options != null) {
             client.options.sensitivity().set(SETTINGS.sensitivity);
-            client.options.invertYMouse().set(SETTINGS.invertY);
+            // Minecraft 1.21.11 no longer exposes a direct invert-Y option.
+            // Keep the setting stored for the GUI; actual inversion can be implemented separately.
         }
     }
 
