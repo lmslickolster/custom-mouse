@@ -2,14 +2,14 @@ package com.olster.custommouse.mixin;
 
 import com.olster.custommouse.CustomMouseClient;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.DeltaTracker;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(InGameHud.class)
+@Mixin(Gui.class)
 public class InGameHudMixin {
     @Inject(method = "renderCrosshair", at = @At("HEAD"), cancellable = true)
     private void customMouse$renderCrosshair(GuiGraphics graphics, DeltaTracker tickCounter, CallbackInfo ci) {
