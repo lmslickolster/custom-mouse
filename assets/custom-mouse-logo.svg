@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<rect width="512" height="512" rx="96" fill="#171717"/>
-<rect x="128" y="72" width="256" height="368" rx="128" fill="#f2f2f2"/>
-<path d="M256 72v150" stroke="#171717" stroke-width="28" stroke-linecap="round"/>
-<rect x="228" y="105" width="56" height="105" rx="28" fill="#171717"/>
-<circle cx="256" cy="154" r="18" fill="#55d84a"/>
-<path d="M256 258v-58M256 258v58M198 258h58M314 258h-58" stroke="#55d84a" stroke-width="18" stroke-linecap="round"/>
-<path d="M224 244l32 14-32 14z" fill="#55d84a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" shape-rendering="crispEdges">
+<rect width="128" height="128" fill="#171717"/>
+<path fill="#f2f2f2" d="M32 18h64v8h8v8h8v40h-8v16h-8v8H32v-8h-8V90h-8V74H8V34h8v-8h8v-8h8z"/>
+<path fill="#171717" d="M56 18h16v38H56z"/>
+<rect x="57" y="25" width="14" height="22" fill="#171717"/>
+<rect x="61" y="30" width="6" height="6" fill="#55d84a"/>
+<path fill="#55d84a" d="M61 58h6v-10h4v10h10v4H71v10h-4V62h-6z"/>
+<path fill="#55d84a" d="M56 59h10v6H56z"/>
 </svg>
